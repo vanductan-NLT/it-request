@@ -10,7 +10,7 @@ interface GatePanelProps {
 }
 
 export function GatePanel({
-  step,
+  step: _step,
   gates,
   canProceed,
   onNext,

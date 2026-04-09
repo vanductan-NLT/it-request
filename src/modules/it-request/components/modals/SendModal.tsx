@@ -33,7 +33,7 @@ export default function SendModal({
         ? '⚠️ Gần đủ'
         : '❌ Chưa đủ';
 
-  const statusEmoji =
+  const _statusEmoji =
     score >= 75 ? '>' : score >= 50 ? '~' : '!';
 
   const truncatedBrief =
