@@ -27,10 +27,10 @@ export default function Step2RequestType({ requestTypes, selectedType, onSelect 
     <section className="space-y-5">
       {/* Section heading */}
       <div>
-        <h2 className="text-xl font-bold text-[#F9FAFB] font-['Playfair_Display',serif]">
+        <h2 className="text-xl font-bold text-[var(--text-primary)] font-['Playfair_Display',serif]">
           Bạn đang gặp vấn đề gì?
         </h2>
-        <p className="text-sm text-[#9CA3AF] mt-1">
+        <p className="text-sm text-[var(--text-secondary)] mt-1">
           Chọn mô tả gần nhất với tình huống của bạn.
         </p>
       </div>
@@ -52,8 +52,8 @@ export default function Step2RequestType({ requestTypes, selectedType, onSelect 
                 transition-all duration-150
                 ${
                   isSelected
-                    ? 'border-2 border-[#7C3AED] bg-[#1C1535] shadow-[0_0_16px_rgba(124,58,237,0.15)]'
-                    : 'border border-[#1F2937] bg-[#111827] hover:border-[#7C3AED]/60 hover:-translate-y-[1px]'
+                    ? 'border-2 border-[#7C3AED] bg-[var(--color-primary-bg)] shadow-[0_0_16px_rgba(124,58,237,0.15)]'
+                    : 'border border-[var(--border-default)] bg-[var(--bg-card)] hover:border-[#7C3AED]/60 hover:-translate-y-[1px]'
                 }
               `}
             >
@@ -62,11 +62,11 @@ export default function Step2RequestType({ requestTypes, selectedType, onSelect 
 
               {/* Text */}
               <div className="flex-1 min-w-0">
-                <span className={`block text-sm font-medium ${isSelected ? 'text-violet-200' : 'text-[#F9FAFB]'}`}>
+                <span className={`block text-sm font-medium ${isSelected ? 'text-violet-200' : 'text-[var(--text-primary)]'}`}>
                   {rt.label}
                 </span>
                 {description && (
-                  <span className="block text-xs text-[#9CA3AF] mt-0.5">{description}</span>
+                  <span className="block text-xs text-[var(--text-secondary)] mt-0.5">{description}</span>
                 )}
               </div>
 

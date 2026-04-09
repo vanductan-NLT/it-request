@@ -23,9 +23,9 @@ export function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07090F] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
-        <div className="bg-[#0F1219] border border-gray-800 rounded-2xl p-8 shadow-2xl">
+        <div className="bg-[var(--bg-surface)] border border-[var(--border-default)] rounded-2xl p-8 shadow-2xl">
           {/* Logo */}
           <div className="flex flex-col items-center mb-8">
             <div className="w-16 h-16 bg-violet-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-violet-600/20">
@@ -33,10 +33,10 @@ export function LoginPage() {
                 N
               </span>
             </div>
-            <h1 className="text-2xl font-bold text-white font-['Playfair_Display',serif]">
+            <h1 className="text-2xl font-bold text-[var(--text-primary)] font-['Playfair_Display',serif]">
               NQuoc IT Request
             </h1>
-            <p className="text-gray-400 text-sm mt-2 text-center">
+            <p className="text-[var(--text-secondary)] text-sm mt-2 text-center">
               Hệ thống tiếp nhận yêu cầu IT nội bộ NhiLe Holdings
             </p>
           </div>
@@ -80,7 +80,7 @@ export function LoginPage() {
           </button>
 
           {/* Footer */}
-          <p className="text-center text-gray-500 text-xs mt-6">
+          <p className="text-center text-[var(--text-dim)] text-xs mt-6">
             Sử dụng tài khoản Google của NhiLe Workspace
           </p>
         </div>

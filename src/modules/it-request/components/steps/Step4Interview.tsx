@@ -92,7 +92,7 @@ export default function Step4Interview({
           } else if (isCurrent) {
             dotClass += 'bg-violet-500 ring-2 ring-violet-400/50 scale-125';
           } else {
-            dotClass += 'bg-[#4B5563]';
+            dotClass += 'bg-[var(--text-dim)]';
           }
           return (
             <button
@@ -129,8 +129,8 @@ export default function Step4Interview({
                 <div
                   className={`max-w-[80%] rounded-xl rounded-tl-sm px-3.5 py-2.5 text-sm leading-relaxed ${
                     isCurrent
-                      ? 'bg-[#1F2937] border border-violet-500/50 text-[#F9FAFB]'
-                      : 'bg-[#1F2937] text-[#F9FAFB]'
+                      ? 'bg-[var(--bg-card)] border border-violet-500/50 text-[var(--text-primary)]'
+                      : 'bg-[var(--bg-card)] text-[var(--text-primary)]'
                   }`}
                 >
                   {q.question}
@@ -140,9 +140,9 @@ export default function Step4Interview({
               {/* User answer bubble - right */}
               {isAnswered && (
                 <div className="flex justify-end">
-                  <div className="max-w-[80%] rounded-xl rounded-tr-sm px-3.5 py-2.5 text-sm leading-relaxed bg-violet-600/20 border border-violet-500/30 text-[#F9FAFB]">
+                  <div className="max-w-[80%] rounded-xl rounded-tr-sm px-3.5 py-2.5 text-sm leading-relaxed bg-violet-600/20 border border-violet-500/30 text-[var(--text-primary)]">
                     {answer === '(bỏ qua)' ? (
-                      <span className="text-[#9CA3AF] italic">Bỏ qua</span>
+                      <span className="text-[var(--text-secondary)] italic">Bỏ qua</span>
                     ) : (
                       <span className="whitespace-pre-wrap">{answer}</span>
                     )}
@@ -162,7 +162,7 @@ export default function Step4Interview({
                         onChange={(e) => setInputValue(e.target.value)}
                         onKeyDown={handleTextKeyDown}
                         placeholder="Nhập câu trả lời..."
-                        className="flex-1 bg-[#111827] border border-[#1F2937] rounded-lg px-3 py-2 text-sm text-[#F9FAFB] placeholder-[#4B5563] focus:outline-none focus:border-violet-500/50 transition-colors"
+                        className="flex-1 bg-[var(--bg-input)] border border-[var(--border-default)] rounded-lg px-3 py-2 text-sm text-[var(--text-primary)] placeholder-[var(--text-dim)] focus:outline-none focus:border-violet-500/50 transition-colors"
                       />
                       <button
                         type="button"
@@ -184,10 +184,10 @@ export default function Step4Interview({
                         onKeyDown={handleTextareaKeyDown}
                         placeholder="Nhập câu trả lời..."
                         rows={3}
-                        className="w-full bg-[#111827] border border-[#1F2937] rounded-lg px-3 py-2 text-sm text-[#F9FAFB] placeholder-[#4B5563] focus:outline-none focus:border-violet-500/50 resize-none transition-colors"
+                        className="w-full bg-[var(--bg-input)] border border-[var(--border-default)] rounded-lg px-3 py-2 text-sm text-[var(--text-primary)] placeholder-[var(--text-dim)] focus:outline-none focus:border-violet-500/50 resize-none transition-colors"
                       />
                       <div className="flex items-center justify-between">
-                        <span className="text-[10px] text-[#4B5563]">Nhấn Ctrl+Enter để gửi</span>
+                        <span className="text-[10px] text-[var(--text-dim)]">Nhấn Ctrl+Enter để gửi</span>
                         <button
                           type="button"
                           onClick={() => handleSubmit(inputValue)}
@@ -207,7 +207,7 @@ export default function Step4Interview({
                           key={opt}
                           type="button"
                           onClick={() => handleSelectOption(opt)}
-                          className="w-full text-left px-3.5 py-2.5 bg-[#111827] border border-[#1F2937] hover:border-violet-500/50 hover:bg-violet-600/10 rounded-lg text-sm text-[#F9FAFB] transition-colors"
+                          className="w-full text-left px-3.5 py-2.5 bg-[var(--bg-input)] border border-[var(--border-default)] hover:border-violet-500/50 hover:bg-violet-600/10 rounded-lg text-sm text-[var(--text-primary)] transition-colors"
                         >
                           {opt}
                         </button>
@@ -219,7 +219,7 @@ export default function Step4Interview({
                   <button
                     type="button"
                     onClick={handleSkip}
-                    className="text-xs text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
+                    className="text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                   >
                     Bỏ qua câu này
                   </button>

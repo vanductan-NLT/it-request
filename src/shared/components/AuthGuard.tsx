@@ -8,10 +8,10 @@ interface AuthGuardProps {
 
 function LoadingSpinner() {
   return (
-    <div className="min-h-screen bg-[#07090F] flex items-center justify-center">
+    <div className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
         <div className="w-10 h-10 border-3 border-violet-500 border-t-transparent rounded-full animate-spin" />
-        <p className="text-sm text-gray-400 font-medium">
+        <p className="text-sm text-[var(--text-secondary)] font-medium">
           Đang tải...
         </p>
       </div>

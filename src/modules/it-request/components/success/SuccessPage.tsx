@@ -57,7 +57,7 @@ export default function SuccessPage({
   }
 
   return (
-    <div className="min-h-screen bg-[#07090F] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center p-4">
       <div className="w-full max-w-lg space-y-6">
         {/* Success icon */}
         <div className="text-center">
@@ -69,31 +69,31 @@ export default function SuccessPage({
           >
             ✅
           </div>
-          <h1 className="mt-3 text-xl font-semibold text-[#F9FAFB]">
+          <h1 className="mt-3 text-xl font-semibold text-[var(--text-primary)]">
             Yêu cầu đã được gửi!
           </h1>
-          <p className="mt-1 text-xs text-[#9CA3AF]">
+          <p className="mt-1 text-xs text-[var(--text-secondary)]">
             Ticket #{ticketId.slice(0, 8)}
           </p>
         </div>
 
         {/* Summary card */}
-        <div className="bg-[#0D1117] border border-[#1F2937] rounded-xl p-5 space-y-3">
+        <div className="bg-[var(--bg-surface)] border border-[var(--border-default)] rounded-xl p-5 space-y-3">
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <p className="text-[10px] text-[#4B5563] uppercase tracking-wider mb-0.5">
+              <p className="text-[10px] text-[var(--text-dim)] uppercase tracking-wider mb-0.5">
                 Team
               </p>
-              <p className="text-sm text-[#F9FAFB]">{team.label}</p>
+              <p className="text-sm text-[var(--text-primary)]">{team.label}</p>
             </div>
             <div>
-              <p className="text-[10px] text-[#4B5563] uppercase tracking-wider mb-0.5">
+              <p className="text-[10px] text-[var(--text-dim)] uppercase tracking-wider mb-0.5">
                 Loại
               </p>
-              <p className="text-sm text-[#F9FAFB]">{requestType.label}</p>
+              <p className="text-sm text-[var(--text-primary)]">{requestType.label}</p>
             </div>
             <div>
-              <p className="text-[10px] text-[#4B5563] uppercase tracking-wider mb-0.5">
+              <p className="text-[10px] text-[var(--text-dim)] uppercase tracking-wider mb-0.5">
                 Mức độ
               </p>
               <div className="flex items-center gap-1.5">
@@ -103,26 +103,26 @@ export default function SuccessPage({
                 >
                   {severity.code}
                 </span>
-                <span className="text-sm text-[#F9FAFB]">{severity.label}</span>
+                <span className="text-sm text-[var(--text-primary)]">{severity.label}</span>
               </div>
             </div>
             <div>
-              <p className="text-[10px] text-[#4B5563] uppercase tracking-wider mb-0.5">
+              <p className="text-[10px] text-[var(--text-dim)] uppercase tracking-wider mb-0.5">
                 SLA
               </p>
-              <p className="text-sm text-[#F9FAFB]">{formatSla(slaHours)}</p>
+              <p className="text-sm text-[var(--text-primary)]">{formatSla(slaHours)}</p>
             </div>
             <div>
-              <p className="text-[10px] text-[#4B5563] uppercase tracking-wider mb-0.5">
+              <p className="text-[10px] text-[var(--text-dim)] uppercase tracking-wider mb-0.5">
                 File đính kèm
               </p>
-              <p className="text-sm text-[#F9FAFB]">{fileCount} file</p>
+              <p className="text-sm text-[var(--text-primary)]">{fileCount} file</p>
             </div>
             <div>
-              <p className="text-[10px] text-[#4B5563] uppercase tracking-wider mb-0.5">
+              <p className="text-[10px] text-[var(--text-dim)] uppercase tracking-wider mb-0.5">
                 Gửi lúc
               </p>
-              <p className="text-sm text-[#F9FAFB]">
+              <p className="text-sm text-[var(--text-primary)]">
                 {formatTimestamp(createdAt)}
               </p>
             </div>
@@ -145,7 +145,7 @@ export default function SuccessPage({
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-bold flex items-center justify-center mt-0.5">
                   {i + 1}
                 </span>
-                <span className="text-sm text-[#9CA3AF]">{text}</span>
+                <span className="text-sm text-[var(--text-secondary)]">{text}</span>
               </li>
             ))}
           </ol>
@@ -156,7 +156,7 @@ export default function SuccessPage({
           <button
             type="button"
             onClick={onEdit}
-            className="flex-1 py-2.5 border border-[#1F2937] hover:border-[#4B5563] rounded-lg text-sm text-[#F9FAFB] transition-colors"
+            className="flex-1 py-2.5 border border-[var(--border-default)] hover:border-[var(--text-dim)] rounded-lg text-sm text-[var(--text-primary)] transition-colors"
           >
             ✏️ Chỉnh sửa
           </button>

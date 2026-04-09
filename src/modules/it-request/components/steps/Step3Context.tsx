@@ -88,10 +88,10 @@ export default function Step3Context({
   return (
     <section className="space-y-8">
       <div>
-        <h2 className="text-xl font-bold text-[#F9FAFB] font-['Playfair_Display',serif]">
+        <h2 className="text-xl font-bold text-[var(--text-primary)] font-['Playfair_Display',serif]">
           Mô tả chi tiết hơn
         </h2>
-        <p className="text-sm text-[#9CA3AF] mt-1">
+        <p className="text-sm text-[var(--text-secondary)] mt-1">
           Càng chi tiết, IT càng xử lý nhanh cho bạn.
         </p>
       </div>
@@ -99,7 +99,7 @@ export default function Step3Context({
       {/* Severity */}
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <h3 className="text-sm font-semibold text-[#F9FAFB]">Vấn đề nghiêm trọng cỡ nào?</h3>
+          <h3 className="text-sm font-semibold text-[var(--text-primary)]">Vấn đề nghiêm trọng cỡ nào?</h3>
           <span className="text-[10px] font-medium text-red-400 bg-red-500/10 px-1.5 py-0.5 rounded">Cần điền</span>
         </div>
         <div id="sev-grid" className="grid grid-cols-2 gap-3">
@@ -114,16 +114,16 @@ export default function Step3Context({
                 className={`flex flex-col gap-1.5 rounded-xl p-4 text-left cursor-pointer transition-all duration-150
                   ${isSelected
                     ? 'border-2 shadow-[0_0_16px_rgba(0,0,0,0.3)]'
-                    : 'border border-[#1F2937] bg-[#111827] hover:border-opacity-60 hover:-translate-y-[1px]'
+                    : 'border border-[var(--border-default)] bg-[var(--bg-card)] hover:border-opacity-60 hover:-translate-y-[1px]'
                   }`}
                 style={isSelected ? { borderColor: sev.color_hex, backgroundColor: `${sev.color_hex}10` } : undefined}
               >
                 <div className="flex items-center gap-2">
                   <span className="text-lg leading-none">{meta.emoji}</span>
                   <span className="text-sm font-bold" style={{ color: sev.color_hex }}>{sev.code}</span>
-                  <span className="text-sm font-medium text-[#F9FAFB]">{sev.label}</span>
+                  <span className="text-sm font-medium text-[var(--text-primary)]">{sev.label}</span>
                 </div>
-                <span className="text-xs text-[#9CA3AF]">{meta.description}</span>
+                <span className="text-xs text-[var(--text-secondary)]">{meta.description}</span>
                 <span
                   className="inline-block self-start text-[10px] font-semibold px-2 py-0.5 rounded-full mt-1"
                   style={{ backgroundColor: `${sev.color_hex}20`, color: sev.color_hex }}
@@ -139,7 +139,7 @@ export default function Step3Context({
       {/* URL */}
       {isBugType && (
         <div className="space-y-2">
-          <label htmlFor="url-field" className="block text-sm font-semibold text-[#F9FAFB]">
+          <label htmlFor="url-field" className="block text-sm font-semibold text-[var(--text-primary)]">
             Link trang đang bị lỗi
           </label>
           <input
@@ -148,7 +148,7 @@ export default function Step3Context({
             value={affectedUrl}
             onChange={(e) => onAffectedUrlChange(e.target.value)}
             placeholder="https://nquoc.vn/..."
-            className="w-full rounded-lg border border-[#1F2937] bg-[#111827] px-4 py-2.5 text-sm text-[#F9FAFB] placeholder-[#4B5563] outline-none transition-colors focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED]/30"
+            className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-input)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder-[var(--text-dim)] outline-none transition-colors focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED]/30"
           />
         </div>
       )}
@@ -156,7 +156,7 @@ export default function Step3Context({
       {/* Architecture Component */}
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <h3 className="text-sm font-semibold text-[#F9FAFB]">Hệ thống nào đang bị lỗi?</h3>
+          <h3 className="text-sm font-semibold text-[var(--text-primary)]">Hệ thống nào đang bị lỗi?</h3>
           <span className="text-[10px] font-medium text-red-400 bg-red-500/10 px-1.5 py-0.5 rounded">Cần điền</span>
         </div>
         <div id="arch-grid" className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))' }}>
@@ -170,8 +170,8 @@ export default function Step3Context({
                 onClick={() => onArchComponentSelect(comp)}
                 className={`flex items-center gap-2 rounded-lg px-3 py-2.5 text-left cursor-pointer transition-all duration-150 text-xs font-medium
                   ${isSelected
-                    ? 'border-2 border-[#7C3AED] bg-[#1C1535] text-violet-200'
-                    : 'border border-[#1F2937] bg-[#111827] text-[#F9FAFB] hover:border-[#7C3AED]/60'
+                    ? 'border-2 border-[#7C3AED] bg-[var(--color-primary-bg)] text-violet-200'
+                    : 'border border-[var(--border-default)] bg-[var(--bg-card)] text-[var(--text-primary)] hover:border-[#7C3AED]/60'
                   }`}
               >
                 <span className="text-base leading-none">{emoji}</span>
@@ -186,7 +186,7 @@ export default function Step3Context({
       {isBugType && (
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <h3 className="text-sm font-semibold text-[#F9FAFB]">Bạn kỳ vọng gì và thực tế ra sao?</h3>
+            <h3 className="text-sm font-semibold text-[var(--text-primary)]">Bạn kỳ vọng gì và thực tế ra sao?</h3>
             <span className="text-[10px] font-medium text-red-400 bg-red-500/10 px-1.5 py-0.5 rounded">Cần điền</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -199,7 +199,7 @@ export default function Step3Context({
                 value={expectedBehavior}
                 onChange={(e) => onExpectedBehaviorChange(e.target.value)}
                 placeholder="Hệ thống nên hoạt động như thế nào..."
-                className="w-full rounded-lg border border-[#1F2937] bg-[#111827] px-3 py-2.5 text-sm text-[#F9FAFB] placeholder-[#4B5563] outline-none transition-colors focus:border-[#22C55E]/60 focus:ring-1 focus:ring-[#22C55E]/20 resize-none"
+                className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-input)] px-3 py-2.5 text-sm text-[var(--text-primary)] placeholder-[var(--text-dim)] outline-none transition-colors focus:border-[#22C55E]/60 focus:ring-1 focus:ring-[#22C55E]/20 resize-none"
                 style={{ minHeight: '70px' }}
               />
             </div>
@@ -212,7 +212,7 @@ export default function Step3Context({
                 value={actualBehavior}
                 onChange={(e) => onActualBehaviorChange(e.target.value)}
                 placeholder="Thực tế đang xảy ra điều gì..."
-                className="w-full rounded-lg border border-[#1F2937] bg-[#111827] px-3 py-2.5 text-sm text-[#F9FAFB] placeholder-[#4B5563] outline-none transition-colors focus:border-[#DC2626]/60 focus:ring-1 focus:ring-[#DC2626]/20 resize-none"
+                className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-input)] px-3 py-2.5 text-sm text-[var(--text-primary)] placeholder-[var(--text-dim)] outline-none transition-colors focus:border-[#DC2626]/60 focus:ring-1 focus:ring-[#DC2626]/20 resize-none"
                 style={{ minHeight: '70px' }}
               />
             </div>
@@ -223,9 +223,9 @@ export default function Step3Context({
       {/* Reproducibility */}
       {isBugType && (
         <div className="space-y-3">
-          <h3 className="text-sm font-semibold text-[#F9FAFB]">
+          <h3 className="text-sm font-semibold text-[var(--text-primary)]">
             Lỗi này có xảy ra thường xuyên không?
-            <span className="ml-2 text-[10px] font-normal text-[#9CA3AF]">Không bắt buộc</span>
+            <span className="ml-2 text-[10px] font-normal text-[var(--text-secondary)]">Không bắt buộc</span>
           </h3>
           <div id="repro-row" className="flex flex-wrap gap-2">
             {REPRO_OPTIONS.map((opt) => {
@@ -237,8 +237,8 @@ export default function Step3Context({
                   onClick={() => onReproducedSelect(opt.value)}
                   className={`rounded-full px-4 py-1.5 text-xs font-medium cursor-pointer transition-all duration-150
                     ${isSelected
-                      ? 'border-2 border-[#7C3AED] bg-[#1C1535] text-violet-200'
-                      : 'border border-[#1F2937] bg-[#111827] text-[#9CA3AF] hover:border-[#7C3AED]/60 hover:text-[#F9FAFB]'
+                      ? 'border-2 border-[#7C3AED] bg-[var(--color-primary-bg)] text-violet-200'
+                      : 'border border-[var(--border-default)] bg-[var(--bg-card)] text-[var(--text-secondary)] hover:border-[#7C3AED]/60 hover:text-[var(--text-primary)]'
                     }`}
                 >
                   {opt.label}
@@ -251,15 +251,15 @@ export default function Step3Context({
 
       {/* Environment */}
       <div className="space-y-2">
-        <h3 className="text-sm font-semibold text-[#F9FAFB]">
+        <h3 className="text-sm font-semibold text-[var(--text-primary)]">
           Môi trường
-          <span className="ml-2 text-[10px] font-normal text-[#4B5563]">Tự động phát hiện</span>
+          <span className="ml-2 text-[10px] font-normal text-[var(--text-dim)]">Tự động phát hiện</span>
         </h3>
-        <div className="flex flex-wrap items-center gap-3 rounded-lg border border-[#1F2937] bg-[#0D1117] px-4 py-2.5 text-xs text-[#9CA3AF]">
+        <div className="flex flex-wrap items-center gap-3 rounded-lg border border-[var(--border-default)] bg-[var(--bg-surface)] px-4 py-2.5 text-xs text-[var(--text-secondary)]">
           <span>{ENV.browser}</span>
-          <span className="text-[#1F2937]">·</span>
+          <span className="text-[var(--border-default)]">·</span>
           <span>{ENV.os}</span>
-          <span className="text-[#1F2937]">·</span>
+          <span className="text-[var(--border-default)]">·</span>
           <span>{ENV.screen}</span>
         </div>
       </div>

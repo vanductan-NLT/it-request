@@ -20,10 +20,10 @@ export default function Step1Team({ teams, selectedTeam, onSelect }: Step1TeamPr
     <section className="space-y-5">
       {/* Section heading */}
       <div>
-        <h2 className="text-xl font-bold text-[#F9FAFB] font-['Playfair_Display',serif]">
+        <h2 className="text-xl font-bold text-[var(--text-primary)] font-['Playfair_Display',serif]">
           Bạn thuộc team nào?
         </h2>
-        <p className="text-sm text-[#9CA3AF] mt-1">
+        <p className="text-sm text-[var(--text-secondary)] mt-1">
           Chọn team bạn đang làm việc hoặc team liên quan đến vấn đề.
         </p>
       </div>
@@ -48,8 +48,8 @@ export default function Step1Team({ teams, selectedTeam, onSelect }: Step1TeamPr
                 transition-all duration-150 text-center
                 ${
                   isSelected
-                    ? 'border-2 border-[#7C3AED] bg-[#1C1535] shadow-[0_0_16px_rgba(124,58,237,0.15)]'
-                    : 'border border-[#1F2937] bg-[#111827] hover:border-[#7C3AED]/60 hover:-translate-y-[1px]'
+                    ? 'border-2 border-[#7C3AED] bg-[var(--color-primary-bg)] shadow-[0_0_16px_rgba(124,58,237,0.15)]'
+                    : 'border border-[var(--border-default)] bg-[var(--bg-card)] hover:border-[#7C3AED]/60 hover:-translate-y-[1px]'
                 }
               `}
             >
@@ -66,7 +66,7 @@ export default function Step1Team({ teams, selectedTeam, onSelect }: Step1TeamPr
               <span className="text-3xl leading-none">{emoji}</span>
 
               {/* Label */}
-              <span className={`text-sm font-medium ${isSelected ? 'text-violet-200' : 'text-[#F9FAFB]'}`}>
+              <span className={`text-sm font-medium ${isSelected ? 'text-violet-200' : 'text-[var(--text-primary)]'}`}>
                 {team.label}
               </span>
             </button>

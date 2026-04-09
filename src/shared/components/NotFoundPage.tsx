@@ -1,11 +1,11 @@
 export function NotFoundPage() {
   return (
-    <div className="min-h-screen bg-[#07090F] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center px-4">
       <div className="text-center">
-        <h1 className="text-6xl font-bold text-gray-600 mb-4 font-['Playfair_Display',serif]">
+        <h1 className="text-6xl font-bold text-[var(--text-muted)] mb-4 font-['Playfair_Display',serif]">
           404
         </h1>
-        <p className="text-lg text-gray-400 mb-6">
+        <p className="text-lg text-[var(--text-secondary)] mb-6">
           Trang bạn tìm không tồn tại
         </p>
         <a

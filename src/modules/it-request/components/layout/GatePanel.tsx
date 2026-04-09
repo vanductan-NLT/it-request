@@ -21,11 +21,11 @@ export function GatePanel({
   const missingCount = missingRequired.length;
 
   return (
-    <div className="sticky bottom-0 z-30 bg-[#0D1117] border-t border-[#1F2937] px-5 py-3 space-y-2">
+    <div className="sticky bottom-0 z-30 bg-[var(--bg-surface)] border-t border-[var(--border-default)] px-5 py-3 space-y-2">
       {/* Gate checklist */}
       {gates.length > 0 && (
         <div>
-          <div className="text-[11px] text-[#6B7280] font-medium mb-1.5">
+          <div className="text-[11px] text-[var(--text-muted)] font-medium mb-1.5">
             Cần hoàn tất
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
@@ -40,7 +40,7 @@ export function GatePanel({
                     ? 'text-[#22C55E] cursor-default'
                     : gate.required
                       ? 'text-[#EAB308] cursor-pointer hover:text-[#FACC15] animate-pulse'
-                      : 'text-[#4B5563] cursor-pointer hover:text-[#6B7280]'
+                      : 'text-[var(--text-dim)] cursor-pointer hover:text-[var(--text-muted)]'
                 }`}
               >
                 {/* Icon */}
@@ -73,7 +73,7 @@ export function GatePanel({
                     />
                   </svg>
                 ) : (
-                  <div className="w-3.5 h-3.5 rounded-full border border-[#374151] shrink-0" />
+                  <div className="w-3.5 h-3.5 rounded-full border border-[var(--border-light)] shrink-0" />
                 )}
                 <span>{gate.label}</span>
               </button>
@@ -88,7 +88,7 @@ export function GatePanel({
           <button
             type="button"
             onClick={onBack}
-            className="px-4 py-2 text-xs font-medium text-[#9CA3AF] hover:text-white border border-[#1F2937] hover:border-[#374151] rounded-lg transition-colors"
+            className="px-4 py-2 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--border-default)] hover:border-[var(--border-light)] rounded-lg transition-colors"
           >
             &larr; Quay lại
           </button>
@@ -102,12 +102,12 @@ export function GatePanel({
           className={`relative px-5 py-2 text-xs font-semibold rounded-lg transition-all duration-200 ${
             canProceed
               ? 'bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-[0_0_16px_rgba(124,58,237,0.3)]'
-              : 'bg-[#1F2937] text-[#4B5563] cursor-not-allowed'
+              : 'bg-[var(--border-default)] text-[var(--text-dim)] cursor-not-allowed'
           }`}
         >
           Tiếp &rarr;
           {!canProceed && missingCount > 0 && (
-            <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-[#EAB308] text-[#07090F] text-[9px] font-bold rounded-full flex items-center justify-center">
+            <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-[#EAB308] text-[var(--bg-page)] text-[9px] font-bold rounded-full flex items-center justify-center">
               {missingCount}
             </span>
           )}

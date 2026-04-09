@@ -51,18 +51,18 @@ export default function SendModal({
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-[580px] max-h-[88vh] overflow-y-auto bg-[#0D1117] border border-[#1F2937] rounded-xl shadow-2xl">
+      <div className="relative w-full max-w-[580px] max-h-[88vh] overflow-y-auto bg-[var(--bg-surface)] border border-[var(--border-default)] rounded-xl shadow-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-[#1F2937]">
-          <h2 className="text-base font-semibold text-[#F9FAFB]">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--border-default)]">
+          <h2 className="text-base font-semibold text-[var(--text-primary)]">
             Gửi cho IT Team
           </h2>
           <button
             type="button"
             onClick={onClose}
-            className="w-8 h-8 rounded-lg hover:bg-[#1F2937] flex items-center justify-center transition-colors"
+            className="w-8 h-8 rounded-lg hover:bg-[var(--border-default)] flex items-center justify-center transition-colors"
           >
-            <span className="text-[#9CA3AF] text-lg leading-none">x</span>
+            <span className="text-[var(--text-secondary)] text-lg leading-none">x</span>
           </button>
         </div>
 
@@ -93,7 +93,7 @@ export default function SendModal({
               >
                 {statusLabel}
               </p>
-              <p className="text-[11px] text-[#9CA3AF]">
+              <p className="text-[11px] text-[var(--text-secondary)]">
                 Độ đầy đủ: {score}%
               </p>
             </div>
@@ -102,11 +102,11 @@ export default function SendModal({
           {/* Brief preview */}
           {briefText && (
             <div className="space-y-2">
-              <h3 className="text-xs font-medium text-[#9CA3AF] uppercase tracking-wider">
+              <h3 className="text-xs font-medium text-[var(--text-secondary)] uppercase tracking-wider">
                 Tóm tắt cho IT
               </h3>
-              <div className="bg-[#111827] border border-[#1F2937] rounded-lg p-3">
-                <pre className="text-xs text-[#9CA3AF] font-mono whitespace-pre-wrap leading-relaxed">
+              <div className="bg-[var(--bg-card)] border border-[var(--border-default)] rounded-lg p-3">
+                <pre className="text-xs text-[var(--text-secondary)] font-mono whitespace-pre-wrap leading-relaxed">
                   {truncatedBrief}
                 </pre>
                 {briefText.split('\n').length > 3 && (
@@ -123,9 +123,9 @@ export default function SendModal({
           )}
 
           {/* File count */}
-          <div className="flex items-center gap-2 bg-[#111827] border border-[#1F2937] rounded-lg px-3 py-2">
+          <div className="flex items-center gap-2 bg-[var(--bg-card)] border border-[var(--border-default)] rounded-lg px-3 py-2">
             <span className="text-base">📎</span>
-            <span className="text-xs text-[#9CA3AF]">
+            <span className="text-xs text-[var(--text-secondary)]">
               {fileCount} file đính kèm
             </span>
           </div>
@@ -171,7 +171,7 @@ export default function SendModal({
             <button
               type="button"
               onClick={onClose}
-              className="text-xs text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
+              className="text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             >
               Huỷ bỏ
             </button>

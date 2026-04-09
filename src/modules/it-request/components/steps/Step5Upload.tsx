@@ -127,7 +127,7 @@ export default function Step5Upload({
       {/* Section 1: Named file slots */}
       {fileSlots.length > 0 && (
         <div className="space-y-3">
-          <h3 className="text-sm font-medium text-[#F9FAFB]">File theo yêu cầu</h3>
+          <h3 className="text-sm font-medium text-[var(--text-primary)]">File theo yêu cầu</h3>
           <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(148px, 1fr))' }}>
             {fileSlots.map((slot) => {
               const file = slotFiles[slot.key];
@@ -147,7 +147,7 @@ export default function Step5Upload({
                       ? 'border border-green-500/50 bg-green-500/5'
                       : isDragOver
                         ? 'border-2 border-dashed border-violet-500 bg-violet-500/5'
-                        : 'border border-dashed border-[#1F2937] hover:border-[#4B5563] bg-[#111827]'
+                        : 'border border-dashed border-[var(--border-default)] hover:border-[var(--text-dim)] bg-[var(--bg-card)]'
                   }`}
                 >
                   {file ? (
@@ -159,12 +159,12 @@ export default function Step5Upload({
                           className="w-12 h-12 object-cover rounded mb-1.5"
                         />
                       ) : (
-                        <div className="w-12 h-12 rounded bg-[#1F2937] flex items-center justify-center mb-1.5">
+                        <div className="w-12 h-12 rounded bg-[var(--border-default)] flex items-center justify-center mb-1.5">
                           <span className="text-lg">📄</span>
                         </div>
                       )}
-                      <p className="text-[11px] text-[#F9FAFB] truncate w-full">{file.name}</p>
-                      <p className="text-[10px] text-[#9CA3AF]">{formatSize(file.size)}</p>
+                      <p className="text-[11px] text-[var(--text-primary)] truncate w-full">{file.name}</p>
+                      <p className="text-[10px] text-[var(--text-secondary)]">{formatSize(file.size)}</p>
                       <button
                         type="button"
                         onClick={() => onRemoveSlotFile(slot.key)}
@@ -176,12 +176,12 @@ export default function Step5Upload({
                   ) : (
                     <>
                       <span className="text-2xl mb-1">📎</span>
-                      <p className="text-[11px] text-[#9CA3AF] mb-1">{slot.label}</p>
+                      <p className="text-[11px] text-[var(--text-secondary)] mb-1">{slot.label}</p>
                       <span
                         className={`text-[9px] px-1.5 py-0.5 rounded-full ${
                           slot.required
                             ? 'bg-amber-500/15 text-amber-400'
-                            : 'bg-[#1F2937] text-[#4B5563]'
+                            : 'bg-[var(--border-default)] text-[var(--text-dim)]'
                         }`}
                       >
                         {slot.required ? 'Cần có' : 'Tuỳ chọn'}
@@ -213,7 +213,7 @@ export default function Step5Upload({
 
       {/* Section 2: General dropzone */}
       <div className="space-y-3">
-        <h3 className="text-sm font-medium text-[#F9FAFB]">File bổ sung</h3>
+        <h3 className="text-sm font-medium text-[var(--text-primary)]">File bổ sung</h3>
         <div
           onDragOver={(e) => {
             e.preventDefault();
@@ -224,13 +224,13 @@ export default function Step5Upload({
           className={`rounded-lg p-6 text-center cursor-pointer transition-colors ${
             dragOverGeneral
               ? 'border-2 border-dashed border-violet-500 bg-violet-500/5'
-              : 'border border-dashed border-[#1F2937] hover:border-[#4B5563] bg-[#111827]'
+              : 'border border-dashed border-[var(--border-default)] hover:border-[var(--text-dim)] bg-[var(--bg-card)]'
           }`}
           onClick={() => generalInputRef.current?.click()}
         >
           <span className="text-2xl block mb-2">📂</span>
-          <p className="text-sm text-[#9CA3AF]">Thêm file khác</p>
-          <p className="text-[11px] text-[#4B5563] mt-1">Kéo thả hoặc click để chọn</p>
+          <p className="text-sm text-[var(--text-secondary)]">Thêm file khác</p>
+          <p className="text-[11px] text-[var(--text-dim)] mt-1">Kéo thả hoặc click để chọn</p>
           <input
             ref={generalInputRef}
             type="file"
@@ -246,7 +246,7 @@ export default function Step5Upload({
             {extraFiles.map((file, i) => (
               <div
                 key={`${file.name}-${i}`}
-                className="flex items-center gap-2.5 bg-[#111827] border border-[#1F2937] rounded-lg px-3 py-2"
+                className="flex items-center gap-2.5 bg-[var(--bg-card)] border border-[var(--border-default)] rounded-lg px-3 py-2"
               >
                 {isImageType(file.type) ? (
                   <img src={file.dataUrl} alt={file.name} className="w-8 h-8 object-cover rounded" />
@@ -254,8 +254,8 @@ export default function Step5Upload({
                   <span className="text-base">📄</span>
                 )}
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-[#F9FAFB] truncate">{file.name}</p>
-                  <p className="text-[10px] text-[#9CA3AF]">{formatSize(file.size)}</p>
+                  <p className="text-xs text-[var(--text-primary)] truncate">{file.name}</p>
+                  <p className="text-[10px] text-[var(--text-secondary)]">{formatSize(file.size)}</p>
                 </div>
                 <button
                   type="button"
@@ -272,14 +272,14 @@ export default function Step5Upload({
 
       {/* Section 3: Output tabs */}
       <div className="space-y-3">
-        <div className="flex gap-1 bg-[#111827] rounded-lg p-1">
+        <div className="flex gap-1 bg-[var(--bg-card)] rounded-lg p-1">
           <button
             type="button"
             onClick={() => setActiveTab('brief')}
             className={`flex-1 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
               activeTab === 'brief'
                 ? 'bg-violet-600 text-white'
-                : 'text-[#9CA3AF] hover:text-[#F9FAFB]'
+                : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
             Tóm tắt cho IT
@@ -290,21 +290,21 @@ export default function Step5Upload({
             className={`flex-1 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
               activeTab === 'prompt'
                 ? 'bg-violet-600 text-white'
-                : 'text-[#9CA3AF] hover:text-[#F9FAFB]'
+                : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
             Tạo User Story
           </button>
         </div>
 
-        <div className="relative bg-[#0D1117] border border-[#1F2937] rounded-lg">
-          <pre className="p-4 text-xs text-[#9CA3AF] font-mono whitespace-pre-wrap max-h-[300px] overflow-y-auto leading-relaxed">
+        <div className="relative bg-[var(--bg-surface)] border border-[var(--border-default)] rounded-lg">
+          <pre className="p-4 text-xs text-[var(--text-secondary)] font-mono whitespace-pre-wrap max-h-[300px] overflow-y-auto leading-relaxed">
             {activeTab === 'brief' ? briefText || 'Chưa có dữ liệu...' : promptText || 'Chưa có dữ liệu...'}
           </pre>
           <button
             type="button"
             onClick={() => handleCopy(activeTab)}
-            className="absolute top-2 right-2 px-2.5 py-1 bg-[#1F2937] hover:bg-[#374151] rounded-md text-[10px] text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
+            className="absolute top-2 right-2 px-2.5 py-1 bg-[var(--border-default)] hover:bg-[var(--border-light)] rounded-md text-[10px] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           >
             {copiedTab === activeTab ? 'Đã copy!' : 'Copy'}
           </button>
@@ -313,7 +313,7 @@ export default function Step5Upload({
 
       {/* Section 4: Send zone */}
       <div className="rounded-xl p-[1px] bg-gradient-to-r from-violet-600 via-purple-500 to-violet-600">
-        <div className="bg-[#0D1117] rounded-xl p-5 space-y-4">
+        <div className="bg-[var(--bg-surface)] rounded-xl p-5 space-y-4">
           <button
             type="button"
             onClick={onSend}
@@ -326,8 +326,8 @@ export default function Step5Upload({
             <span className={score >= 75 ? 'text-green-400' : score >= 50 ? 'text-amber-400' : 'text-red-400'}>
               {score >= 75 ? '>' : score >= 50 ? '~' : '!'} {score}% độ đầy đủ
             </span>
-            <span className="text-[#4B5563]">|</span>
-            <span className={totalFiles > 0 ? 'text-green-400' : 'text-[#4B5563]'}>
+            <span className="text-[var(--text-dim)]">|</span>
+            <span className={totalFiles > 0 ? 'text-green-400' : 'text-[var(--text-dim)]'}>
               {totalFiles} file đính kèm
             </span>
           </div>

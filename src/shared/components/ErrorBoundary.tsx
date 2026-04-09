@@ -35,9 +35,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-[#07090F] flex items-center justify-center px-4">
+        <div className="min-h-screen bg-[var(--bg-page)] flex items-center justify-center px-4">
           <div className="w-full max-w-md text-center">
-            <div className="bg-[#0F1219] border border-gray-800 rounded-2xl p-8 shadow-2xl">
+            <div className="bg-[var(--bg-surface)] border border-[var(--border-default)] rounded-2xl p-8 shadow-2xl">
               <div className="w-16 h-16 mx-auto mb-4 bg-red-900/30 border border-red-800 rounded-full flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -57,15 +57,15 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                 </svg>
               </div>
 
-              <h2 className="text-xl font-bold text-white mb-2">
+              <h2 className="text-xl font-bold text-[var(--text-primary)] mb-2">
                 Đã xảy ra lỗi
               </h2>
-              <p className="text-gray-400 text-sm mb-6">
+              <p className="text-[var(--text-secondary)] text-sm mb-6">
                 Ứng dụng gặp sự cố không mong muốn. Vui lòng thử tải lại trang.
               </p>
 
               {import.meta.env.DEV && this.state.error && (
-                <div className="mb-4 p-3 rounded-lg bg-gray-900 border border-gray-700 text-left">
+                <div className="mb-4 p-3 rounded-lg bg-[var(--bg-card)] border border-[var(--border-default)] text-left">
                   <p className="text-xs text-red-400 font-mono break-all">
                     {this.state.error.message}
                   </p>
@@ -75,7 +75,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               <div className="flex gap-3 justify-center">
                 <button
                   onClick={this.handleReset}
-                  className="px-4 py-2.5 text-sm font-medium text-gray-300 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="px-4 py-2.5 text-sm font-medium text-[var(--text-secondary)] bg-[var(--bg-card)] hover:bg-[var(--border-default)] rounded-lg transition-colors"
                 >
                   Thử lại
                 </button>
