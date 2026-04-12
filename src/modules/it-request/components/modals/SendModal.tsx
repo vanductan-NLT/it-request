@@ -160,7 +160,7 @@ export default function SendModal({
                 Đang gửi...
               </>
             ) : (
-              '✓ Đã gửi xong'
+              'Gửi cho IT →'
             )}
           </button>
 

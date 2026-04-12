@@ -293,7 +293,7 @@ export default function Step5Upload({
                 : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
-            Tạo User Story
+            Gợi ý phân tích (dành cho IT)
           </button>
         </div>
 

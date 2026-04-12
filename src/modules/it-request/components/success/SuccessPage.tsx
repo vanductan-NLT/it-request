@@ -73,7 +73,7 @@ export default function SuccessPage({
             Yêu cầu đã được gửi!
           </h1>
           <p className="mt-1 text-xs text-[var(--text-secondary)]">
-            Ticket #{ticketId.slice(0, 8)}
+            Mã yêu cầu: #{ticketId.slice(0, 8)}
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export default function SuccessPage({
             </div>
             <div>
               <p className="text-[10px] text-[var(--text-dim)] uppercase tracking-wider mb-0.5">
-                SLA
+                IT phản hồi trong
               </p>
               <p className="text-sm text-[var(--text-primary)]">{formatSla(slaHours)}</p>
             </div>
@@ -136,10 +136,10 @@ export default function SuccessPage({
           </h3>
           <ol className="space-y-2.5">
             {[
-              'IT xác nhận đã nhận qua Telegram',
-              'IT nhắn nếu cần thêm thông tin',
-              'IT báo đã sửa xong',
-              'Bạn kiểm tra và phản hồi OK',
+              'IT sẽ liên hệ bạn khi nhận được yêu cầu',
+              'IT nhắn nếu cần thêm thông tin từ bạn',
+              'IT báo đã sửa xong — bạn kiểm tra lại',
+              'Nếu chưa thấy IT liên hệ, nhắn Zalo nhóm IT',
             ].map((text, i) => (
               <li key={i} className="flex items-start gap-2.5">
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-bold flex items-center justify-center mt-0.5">
@@ -162,17 +162,19 @@ export default function SuccessPage({
           </button>
           <button
             type="button"
-            onClick={handleDelete}
-            className="flex-1 py-2.5 border border-red-500/30 hover:border-red-500/60 hover:bg-red-500/5 rounded-lg text-sm text-red-400 transition-colors"
-          >
-            🗑️ Xoá yêu cầu
-          </button>
-          <button
-            type="button"
             onClick={onNew}
             className="flex-1 py-2.5 bg-violet-600 hover:bg-violet-500 rounded-lg text-sm font-medium text-white transition-colors"
           >
             + Gửi yêu cầu mới
+          </button>
+        </div>
+        <div className="text-center">
+          <button
+            type="button"
+            onClick={handleDelete}
+            className="text-xs text-[var(--text-dim)] hover:text-red-400 transition-colors"
+          >
+            🗑️ Xoá yêu cầu này
           </button>
         </div>
 

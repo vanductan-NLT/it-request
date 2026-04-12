@@ -100,9 +100,9 @@ export function getGate(state: WizardState, step?: StepId): GateItem[] {
       return [
         {
           id: 'file',
-          label: 'Đính kèm ít nhất 1 file',
+          label: 'Đính kèm file (không bắt buộc)',
           ok: totalFiles > 0,
-          required: true,
+          required: false,
           targetId: 'upload-section',
         },
       ];

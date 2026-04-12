@@ -45,7 +45,7 @@ const ARCH_COMPONENTS: ArchComponent[] = [
   { id: 'c4', code: 'api_nquoc_vn',  label: 'api.nquoc.vn' },
   { id: 'c5', code: 'supabase',      label: 'Supabase' },
   { id: 'c6', code: 'tbot_nquoc_vn', label: 'tbot.nquoc.vn' },
-  { id: 'c7', code: 'external',      label: 'External' },
+  { id: 'c7', code: 'external',      label: 'Website của team (Bloom, TIH...)' },
   { id: 'c8', code: 'unknown',       label: 'Không rõ' },
 ];
 
@@ -61,10 +61,10 @@ const ARCH_EMOJIS: Record<string, string> = {
 };
 
 const REPRO_OPTIONS: { label: string; value: 'always' | 'sometimes' | 'never' | '' }[] = [
-  { label: '100%',       value: 'always' },
-  { label: '~50%',       value: 'sometimes' },
-  { label: '1 lần',      value: 'never' },
-  { label: 'Chưa thử',   value: '' },
+  { label: 'Luôn luôn',   value: 'always' },
+  { label: 'Thỉnh thoảng', value: 'sometimes' },
+  { label: 'Chỉ 1 lần',   value: 'never' },
+  { label: 'Chưa thử',    value: '' },
 ];
 
 export default function Step3Context({
@@ -128,7 +128,7 @@ export default function Step3Context({
                   className="inline-block self-start text-[10px] font-semibold px-2 py-0.5 rounded-full mt-1"
                   style={{ backgroundColor: `${sev.color_hex}20`, color: sev.color_hex }}
                 >
-                  IT xử lý trong {sev.sla_hours < 24 ? `${sev.sla_hours} giờ` : `${sev.sla_hours / 24} ngày`}
+                  IT phản hồi trong {sev.sla_hours < 24 ? `${sev.sla_hours} giờ` : `${sev.sla_hours / 24} ngày`}
                 </span>
               </button>
             );
@@ -147,7 +147,7 @@ export default function Step3Context({
             type="text"
             value={affectedUrl}
             onChange={(e) => onAffectedUrlChange(e.target.value)}
-            placeholder="https://nquoc.vn/..."
+            placeholder="https://..."
             className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-input)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder-[var(--text-dim)] outline-none transition-colors focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED]/30"
           />
         </div>

@@ -27,13 +27,6 @@ const requestTypes = [
     interview_questions: [
       { id: 'iq-bug-1', question: 'Lỗi xảy ra lần đầu tiên khi nào?', type: 'text' as const, sort_order: 1 },
       { id: 'iq-bug-2', question: 'Bạn đã thử cách nào để khắc phục chưa?', type: 'multiline' as const, sort_order: 2 },
-      {
-        id: 'iq-bug-3',
-        question: 'Lỗi có tái diễn mỗi lần thử không?',
-        type: 'select' as const,
-        options: ['Luôn luôn', 'Thỉnh thoảng', 'Chỉ xảy ra 1 lần'],
-        sort_order: 3,
-      },
     ],
     file_slots_def: [
       { key: 'screenshot', label: 'Screenshot màn hình lỗi', accept: 'image/*', required: false },
